@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genius Perfomance Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="resp.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script2.js" defer></script>
+    <script src="ml.js" defer></script>
+
+</head>
+<body>
+    
+    <div class="menu-toggle" id="menu-toggle">
+        <i class='bx bx-menu'></i> <!-- Hamburger icon -->
+    </div>
+    <!-- Sidebar -->
+    <div class="sidebar active">
+        <div class="user-info">
+            <img src="bak2.jpg" alt="User Picture" class="user-picture">
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#input"><i class='bx bx-edit'></i>  Input Details</a></li>
+            <li><a href="#display"><i class='bx bx-table'></i>  Display Details</a></li>
+            <li><a href="#statistics"><i class='bx bx-bar-chart'></i>  Statistics</a></li>
+            <li><a href="#achievements-section"><i class='bx bx-trophy'></i>  Achievements</a></li>
+            <li><a href="#goal-setting"><i class='bx bx-target-lock'></i>  Goal Setting</a></li>
+            <li><a href="#about-section"><i class='bx bx-info-circle'></i>  About</a></li>
+        </ul>
+    </div>
+
+    <header>
+        <div class="navbar">
+            <h1>Genius Performance Analysis</h1>
+        </div>
+    </header>
+  
+        <main>
+            <!-- Input Section -->
+     
+        <section id="input" class="section">
+            <h2>INPUT ACADEMIC DETAILS</h2>
+            <hr>
+            <div class="container-input">
+                <div class="form">
+                    <form id="module-form">
+                        <input type="text" id="module-name" placeholder="Course name" required autocomplete="off">
+                        <input type="text" id="year" placeholder="Academic Year" required autocomplete="off">
+                        <input type="text" id="part" placeholder="Part" required autocomplete="off">
+                        <input type="text" id="semester" placeholder="Semester" required autocomplete="off">
+                        <input type="number" id="mark" placeholder="Mark" required autocomplete="off">
+                        <input type="text" id="grade" placeholder="Classification (1 / 2.1 / 2.2 / P / F)" required autocomplete="off">
+                        <button id="add-module-btn">Add Module</button>
+                    </form>
+                </div>
+                <div class="image">
+                    <img src="bak5.jpg" class="pic">
+                </div>
+            </div>
+        </section>
+
+            <!-- Display Section -->
+            <section id="display" class="section">
+                <h2>ACADEMIC DETAILS</h2>
+                <hr>
+                <table id="marks-table">
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Academic Year</th>
+                            <th>Part</th>
+                            <th>Semester</th>
+                            <th>Mark</th>
+                            <th>Classification</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="module-table-body">
+                        <!-- Dynamic table from JS -->
+                    </tbody>
+                </table>
+                <button onclick="downloadCSV()" class="csv">Download CSV</button>
+            </section>
+
+            <!-- Statistics Section -->
+            <section id="statistics" class="section">
+                <div class="forh2">
+                    <h2>STATISTICS</h2>
+                    <hr>
+                </div>
+                <div class="tbgh">
+                    <div class="graph">
+                        <canvas id="semesterGraph" width="150" height="250"></canvas>
+                    </div>
+                    <div class="totalAver">
+                        <p>Overall Average: <span id="average">0</span></p>
+                        <p>Total Marks: <span id="total-marks">0</span></p>
+                    </div>
+                    <div class="pie">
+                        <canvas id="classificationPieChart" width="200" height="200"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grade Prediction Section -->
+            <section id="grade-prediction" class="section">
+                <h2>GRADE PREDICTION</h2>
+                <hr>
+                <button id="train-predict-btn">Predict Next Semester Average</button>
+                <p id="prediction-result"></p>
+            </section>
+            <!-- Achievements Section -->
+            <section id="achievements-section" class="section">
+                <div id="achievements">
+                    <h2>ACHIEVEMENTS</h2>
+                    <hr>
+                    <ul id="achievement-list"></ul>
+                </div>
+            </section>
+
+            <!-- Goal Setting Section -->
+            <section id="goal-setting" class="section">
+                <h2>GOAL SETTING</h2>
+                <div class="goal_calender">
+                    <div class="goal-container">
+                        <div class="goal-input">
+                            <input type="text" id="goalInput" placeholder="Enter your goal">
+                            <button onclick="addGoal()"><i class='bx bxs-message-alt-add'></i></button>
+                        </div>
+                   
+                        <div class="goal-list-header">
+                            <div>Goal</div>
+                            <div>Update Progress</div>
+                            <div>Delete</div>
+                        </div>
+                      
+                        <ul id="goalList" class="goal-list"></ul>
+                    </div>
+                </div>
+            </section>
+            
+                <!-- About Section -->
+        <section id="about-section" class="section">
+            <div class="about-container">
+                <h2>ABOUT ME</h2>
+                <hr>
+                <p>Genius Performance Analysis is dedicated to providing insights into student performance through data-driven analysis and career recommendations.</p>
+                
+                <div class="about-content">
+                    <div class="about-box">
+                        <h4>Our Mission</h4>
+                        <p>We strive to empower students by analyzing academic performance and providing recommendations for future success.</p>
+                    </div>
+
+                    <div class="about-box">
+                        <h4>Connect with Us</h4>
+                        <ul>
+                            <li><a href="https://wa.me/+263776398294" target="_blank"><i class='bx bxl-whatsapp'></i> Genius</a></li>
+                            <li><a href="https://www.linkedin.com/in/genius-kudzai" target="_blank"><i class='bx bxl-linkedin-square'></i> Genius Kudzai</a></li>
+                            <li><a href="https://github.com/geniuskudzai21" target="_blank"><i class='bx bxl-github'></i> geniuskudzai21</a></li>
+                            <li><a href="mailto:geniusboykanya@gmail.com"><i class='bx bx-envelope'></i> geniusboykanya@gmail.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="about-bottom">
+                    <p>&copy; 2025 Genius Performance Analysis. All Rights Reserved.</p>
+                </div>
+
+            </div>
+        </section>
+
+        </main>
+    
+    <script src="script.js" defer></script>
+</body>
+</html>

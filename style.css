@@ -1,0 +1,495 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+header {
+    background: #04072b; 
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgb(150, 157, 252);
+}  
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #04072b;
+    color: #fff;
+    position: fixed;
+    top:70px;
+    left: 0; 
+    z-index: 1000;
+    padding-top: 45px;
+}
+.sidebar .user-info {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.sidebar .user-picture {
+    width: 170px;
+    height: 120px;
+    object-fit: cover;
+    box-shadow: 0 2px 10px rgb(150, 157, 252);
+    border-radius: 5px;
+}
+.user-info img{
+    transition: 1s;
+}
+.user-info img:hover{
+    transform: scale(1.1);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.sidebar-menu li a:hover {
+    background-color:  rgb(150, 157, 252);
+}
+main{
+    margin-left: 250px; 
+    padding: 2px 2px;
+    transition: margin-left 0.3s ease;
+}
+.navbar {
+    padding: 10px 0;
+}
+.navbar h1 {
+    margin: 0;
+    font-size: 25px;
+    color: #ffffff;
+}
+section {
+    display: none;
+    padding: 20px;
+    margin: 10px auto;
+    box-shadow: 0 2px 10px rgb(0, 60, 255);
+    width: 90%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 6px;
+}
+section.active {
+    display: block;
+}
+
+#input {
+    display: block;
+    padding: 20px;
+}
+
+.container-input {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 30px; 
+    padding: 20px;
+    text-align: center;
+    justify-content: center; 
+}
+
+.form {
+    flex: 1 1 300px; 
+    max-width: 400px;
+    margin-right: 0; 
+}
+
+.pic {
+    width: 100%; 
+    max-width: 400px; 
+    height: auto; 
+    box-shadow: 0 2px 20px rgb(150, 157, 252);
+    border-radius: 17px;
+}
+
+.image {
+    flex: 1 1 300px; 
+    max-width: 400px; 
+    padding: 20px;
+    height: auto; 
+}
+
+.image img {
+    transition: 1s;
+}
+
+.image img:hover {
+    transform: scale(1.1);
+}
+
+input[type="text"], input[type="number"] {
+    border: none;
+    border-radius: 0;
+    outline: none;
+    border-bottom: 2px solid rgb(0, 60, 255);
+    background-color: transparent;
+    width: 100%; 
+    max-width: 350px;
+    padding: 10px;
+    display: block;
+    margin: 15px auto; 
+    font-size: 14px;
+}
+
+h2 {
+    color: rgb(0, 11, 71);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#add-module-btn {
+    background-color: rgba(0, 35, 192, 0.274);
+    color: rgb(0, 11, 71);
+    border: 2px solid rgb(0, 60, 255);
+    padding: 8px 13px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#add-module-btn:hover {
+    background-color: rgb(0, 11, 71);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
+}
+
+button:active {
+    opacity: 0.5;
+}
+
+#display {
+    padding: 20px;
+    height: auto;
+    background-color: white;
+}
+.csv{
+    background-color: rgba(0, 35, 192, 0.274);
+    color: rgb(0, 11, 71);
+    border: 2px solid rgb(0, 60, 255);
+    padding: 8px 13px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+.csv:hover {
+    background-color: rgb(0, 11, 71);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
+}
+
+#marks-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#marks-table th, #marks-table td {
+    border: 1px solid #b8b8b8;
+}
+
+#marks-table th {
+    padding: 12px;
+    background-color:rgb(150, 157, 252);
+    color: rgb(0, 0, 0);
+}
+
+#marks-table td {
+    padding: 10px;
+    font-size: 13px;
+}
+button.edit-btn, button.delete-btn {
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    color: #000153;
+    font-size: 14px;
+    background-color: transparent;
+    margin-left: 14px;
+}
+
+#statistics {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.forh2 {
+    padding: 15px;
+}
+
+#statistics h2 {
+    font-size: 28px;
+    color: #04072b;
+}
+
+#statistics p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.tbgh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+
+.graph {
+    margin: 20px;
+    width: 300px;
+    margin-left: 0;
+}
+
+.totalAver {
+    margin-bottom: 20%;
+    margin-right: 20px;
+    margin-left: 40px;
+}
+
+.pie {
+    width: 350px;
+    height: 350px;
+    padding: 20px;
+}
+
+#achievements-section{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    color: black; 
+}
+#achievement-list li {
+    font-size: 18px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+     font-weight: bold;
+}
+#achievement-list .medal {
+    width: 50px; 
+    height: 50px;
+    margin-right: 10px;
+    background-color: transparent; 
+   
+}
+#achievement-list .improvement {
+    color: #000316;
+    font-weight: bold;
+}
+.goal-container {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+   box-shadow: 0 2px 10px rgb(13, 158, 255);
+    font-size: 14px;
+    margin: 10px;
+}
+.goal-list-header {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 20px; 
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+    margin-bottom: 15px;
+    margin-left: 50px;
+    margin-right: 10px;
+}
+.goal-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.goal-list li{
+    display: grid;
+    grid-template-columns: 1fr auto auto; 
+    gap: 20px;
+    background: #0683ff25;
+    padding: 12px;
+    margin: 6px 0;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+.goal-text{
+    text-align: left;
+}
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.goal-list button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+.goal-input {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.goal-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 19px;
+    font-size: 14px;
+ 
+    height: 20px; 
+}
+.goal-input button{
+    background: none;
+    font-size: 20px;
+    color: rgb(7, 0, 39);
+    cursor: pointer;
+    border: none;
+}
+
+#about-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#about-section h2 {
+    font-size: 28px;
+    color: #04072b;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; 
+    margin-top: 20px;
+}
+
+.about-box {
+    flex: 1 1 calc(50% - 40px); 
+    min-width: 250px; 
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgb(1, 163, 184);
+    border-radius: 6px;
+    box-sizing: border-box; 
+}
+
+.about-box h4 {
+    font-size: 20px;
+    color: #04072b;
+    margin-bottom: 10px;
+}
+
+.about-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-box ul li {
+    margin: 8px 0;
+}
+
+.about-box ul li a {
+    text-decoration: none;
+    color: #007BFF;
+    transition: 0.3s;
+}
+
+.about-box ul li a:hover {
+    color: #0056b3;
+}
+
+.about-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    #display {
+        padding: 10px;
+    }
+
+    #marks-table {
+        font-size: 12px;
+    }
+
+    #marks-table th, #marks-table td {
+        padding: 8px;
+    }
+
+    button.edit-btn, button.delete-btn {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #display {
+        padding: 5px;
+    }
+
+    #marks-table {
+        font-size: 11px;
+    }
+
+    #marks-table th, #marks-table td {
+        padding: 6px;
+    }
+
+    .container-input {
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .form, .image {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
