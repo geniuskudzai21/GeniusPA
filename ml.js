@@ -1,19 +1,6 @@
-const AI_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
+const AI_API_URL = '/api/chat';
 const AI_MODEL = 'openai/gpt-oss-120b';
 const CHAT_STORAGE_KEY = 'ai_chat_messages';
-
-function getApiKey() {
-    let key = localStorage.getItem('groq_api_key');
-    if (!key) {
-        key = prompt('Enter your Groq API key to use AI features:\n(Get one at https://console.groq.com/keys)');
-        if (key && key.trim()) {
-            localStorage.setItem('groq_api_key', key.trim());
-            return key.trim();
-        }
-        return null;
-    }
-    return key;
-}
 
 let chatMessages = JSON.parse(localStorage.getItem(CHAT_STORAGE_KEY)) || [];
 
@@ -116,14 +103,9 @@ function buildSystemMessage() {
 }
 
 async function callAI(messages) {
-    const key = getApiKey();
-    if (!key) throw new Error('API key required. Set it in the GeniusAI chat header.');
     const response = await fetch(AI_API_URL, {
         method: 'POST',
-        headers: {
-            'Authorization': `Bearer ${key}`,
-            'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             model: AI_MODEL,
             messages: messages,
@@ -165,14 +147,9 @@ function extractJSONArray(text) {
 }
 
 async function callAIVision(messages) {
-    const key = getApiKey();
-    if (!key) throw new Error('API key required. Set it in the GeniusAI chat header.');
     const response = await fetch(AI_API_URL, {
         method: 'POST',
-        headers: {
-            'Authorization': `Bearer ${key}`,
-            'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             model: VISION_MODEL,
             messages: messages,
@@ -458,22 +435,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (modalClose && modal) {
         modalClose.addEventListener('click', function () {
             modal.classList.remove('open');
-        });
-    }
-
-    const setKeyBtn = document.getElementById('set-key-btn');
-    if (setKeyBtn) {
-        setKeyBtn.addEventListener('click', function () {
-            const current = localStorage.getItem('groq_api_key') || '';
-            const key = prompt('Enter your Groq API key:', current);
-            if (key !== null) {
-                if (key.trim()) {
-                    localStorage.setItem('groq_api_key', key.trim());
-                    alert('API key saved!');
-                } else {
-                    localStorage.removeItem('groq_api_key');
-                }
-            }
         });
     }
 
