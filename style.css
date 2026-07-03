@@ -736,31 +736,6 @@ button.edit-btn, button.delete-btn {
     margin-right: 6px;
 }
 
-.chat-modal-header-right {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.chat-header-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    padding: 4px;
-    display: flex;
-    align-items: center;
-    opacity: 0.8;
-    transition: opacity 0.2s;
-    border-radius: 4px;
-}
-
-.chat-header-btn:hover {
-    opacity: 1;
-    background: rgba(255, 255, 255, 0.15);
-}
-
 .chat-modal-close {
     background: none;
     border: none;
