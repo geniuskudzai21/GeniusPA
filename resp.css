@@ -37,6 +37,95 @@
     }
 }
 
+@media (max-width: 768px) {
+    #achievement-list li {
+        font-size: 14px;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 8px 0;
+    }
+
+    #achievement-list .medal {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    #achievement-list li {
+        font-size: 13px;
+    }
+
+    #achievement-list .medal {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 900px) {
+    .chat-modal {
+        width: calc(100vw - 32px);
+        right: 16px;
+        height: 65vh;
+        max-height: calc(100vh - 120px);
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-modal {
+        bottom: 76px;
+        height: 55vh;
+        border-radius: 12px;
+    }
+
+    .chat-fab {
+        bottom: 14px;
+        right: 14px;
+        width: 46px;
+        height: 46px;
+        font-size: 22px;
+    }
+
+    .chat-modal-header {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .chat-modal-body .suggested-prompts {
+        padding: 8px 10px;
+        gap: 4px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+
+    .chat-modal-body .prompt-btn {
+        font-size: 11px;
+        padding: 4px 10px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .chat-messages {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .chat-bubble {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    .chat-input-area {
+        padding: 8px 10px;
+    }
+
+    .chat-input-area textarea {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+}
+
 header {
     background: #04072b;
     color: #fff;
