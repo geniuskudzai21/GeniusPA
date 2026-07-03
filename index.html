@@ -64,6 +64,23 @@
                     <img src="bak5.jpg" class="pic">
                 </div>
             </div>
+            <div class="screenshot-section">
+                <h3>OR - Upload Results Screenshot</h3>
+                <p>Upload a screenshot of your results table and the system will extract the data automatically.</p>
+                <div class="screenshot-upload">
+                    <label for="screenshot-input" class="screenshot-label">
+                        <i class='bx bx-cloud-upload'></i>
+                        <span>Click to select screenshot</span>
+                    </label>
+                    <input type="file" id="screenshot-input" accept="image/*" hidden>
+                    <div id="screenshot-preview" class="screenshot-preview" style="display:none;">
+                        <img id="screenshot-img" alt="Preview">
+                        <button id="remove-screenshot-btn" class="remove-btn"><i class='bx bx-x'></i></button>
+                    </div>
+                </div>
+                <button id="extract-btn" disabled>Extract Results from Screenshot</button>
+                <div id="extract-status"></div>
+            </div>
         </section>
 
             <!-- Display Section -->
