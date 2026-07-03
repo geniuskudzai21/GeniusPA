@@ -28,6 +28,8 @@
             <li><a href="#input"><i class='bx bx-edit'></i>  Input Details</a></li>
             <li><a href="#display"><i class='bx bx-table'></i>  Display Details</a></li>
             <li><a href="#statistics"><i class='bx bx-bar-chart'></i>  Statistics</a></li>
+            <li><a href="#grade-prediction"><i class='bx bx-line-chart'></i>  Grade Prediction</a></li>
+            <li><a href="#ai-assistant"><i class='bx bx-bot'></i>  AI Assistant</a></li>
             <li><a href="#achievements-section"><i class='bx bx-trophy'></i>  Achievements</a></li>
             <li><a href="#goal-setting"><i class='bx bx-target-lock'></i>  Goal Setting</a></li>
             <li><a href="#about-section"><i class='bx bx-info-circle'></i>  About</a></li>
@@ -112,8 +114,30 @@
                 <h2>GRADE PREDICTION</h2>
                 <hr>
                 <button id="train-predict-btn">Predict Next Semester Average</button>
-                <p id="prediction-result"></p>
+                <div id="prediction-result"></div>
             </section>
+
+            <!-- AI Assistant Section -->
+            <section id="ai-assistant" class="section">
+                <h2>AI ACADEMIC ASSISTANT</h2>
+                <hr>
+                <p>Ask GeniusAI anything about your academic performance, study tips, or career advice.</p>
+                <div class="suggested-prompts">
+                    <button class="prompt-btn" onclick="insertSuggestedPrompt('Analyze my overall academic performance and give me a summary.')">Analyze My Performance</button>
+                    <button class="prompt-btn" onclick="insertSuggestedPrompt('What are my weakest areas and how can I improve?')">Identify Weak Areas</button>
+                    <button class="prompt-btn" onclick="insertSuggestedPrompt('Suggest a study schedule based on my current courses and marks.')">Study Schedule</button>
+                    <button class="prompt-btn" onclick="insertSuggestedPrompt('What career paths would suit my academic strengths?')">Career Suggestions</button>
+                </div>
+                <div class="chat-container">
+                    <div class="chat-messages" id="chat-messages"></div>
+                    <div class="chat-input-area">
+                        <textarea id="chat-input" placeholder="Ask GeniusAI anything about your academics..." rows="2"></textarea>
+                        <button id="chat-send-btn"><i class='bx bx-send'></i></button>
+                        <button id="clear-chat-btn" class="clear-chat"><i class='bx bx-trash'></i></button>
+                    </div>
+                </div>
+            </section>
+
             <!-- Achievements Section -->
             <section id="achievements-section" class="section">
                 <div id="achievements">
