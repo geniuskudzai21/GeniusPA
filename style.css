@@ -698,7 +698,7 @@ button.edit-btn, button.delete-btn {
     position: fixed;
     bottom: 92px;
     right: 24px;
-    width: 380px;
+    width: 600px;
     height: 540px;
     max-height: calc(100vh - 140px);
     background: white;
@@ -734,6 +734,31 @@ button.edit-btn, button.delete-btn {
 
 .chat-modal-header i {
     margin-right: 6px;
+}
+
+.chat-modal-header-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.chat-header-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    border-radius: 4px;
+}
+
+.chat-header-btn:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .chat-modal-close {
@@ -800,7 +825,7 @@ button.edit-btn, button.delete-btn {
 
 .chat-message {
     display: flex;
-    max-width: 85%;
+    max-width: 95%;
 }
 
 .chat-message.user {
